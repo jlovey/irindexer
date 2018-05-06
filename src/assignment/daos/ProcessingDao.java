@@ -21,6 +21,10 @@ import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import assignment.pojos.Document;
 import assignment.pojos.Term;
 
+/**
+ * @author lovey joshi
+ *
+ */
 public class ProcessingDao {
 
 	private static InputStream input = null;
@@ -52,6 +56,12 @@ public class ProcessingDao {
 
 	}
 
+	/**
+	 * @param text
+	 * @param documentId
+	 * @param indexmap
+	 * @return
+	 */
 	public HashMap<String, Term> createIndexTerms(String text, String documentId, HashMap<String, Term> indexmap) {
 
 		// Process spilit_text
@@ -109,6 +119,10 @@ public class ProcessingDao {
 		return indexmap;
 	}
 
+	/**
+	 * @param text
+	 * @return
+	 */
 	private String[] processText(String text) {
 		String[] textsplit = text.split(" ");
 		// Remove stopwords
@@ -124,6 +138,10 @@ public class ProcessingDao {
 		return textsplit;
 	}
 
+	/**
+	 * @param file
+	 * @return
+	 */
 	public String processDocument(File file) {
 		StringBuffer buffer = new StringBuffer();
 		try (FileInputStream fis = new FileInputStream(file.getAbsolutePath());

@@ -14,8 +14,16 @@ import java.util.HashMap;
 
 import assignment.pojos.Term;
 
+/**
+ * @author lovey joshi
+ *
+ */
 public class IndexingDao {
 
+	/**
+	 * @param location_of_index
+	 * @return
+	 */
 	@SuppressWarnings("unchecked")
 	public HashMap<String, Term> readIndex(String location_of_index) {
 
@@ -31,6 +39,10 @@ public class IndexingDao {
 
 	}
 
+	/**
+	 * @param location_of_index
+	 * @return
+	 */
 	public ArrayList<String> readProcessedDocumentsInIndex(String location_of_index) {
 		ArrayList<String> docs = new ArrayList<>();
 		try (BufferedReader bfr = new BufferedReader(new FileReader(new File(location_of_index + "/indexdocs.txt")))) {
@@ -46,6 +58,11 @@ public class IndexingDao {
 		return docs;
 	}
 
+	/**
+	 * @param index
+	 * @param location_of_index
+	 * @return
+	 */
 	public boolean writeIndex(HashMap<String, Term> index, String location_of_index) {
 
 		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(location_of_index + "/index.dat"))) {
@@ -59,6 +76,11 @@ public class IndexingDao {
 
 	}
 
+	/**
+	 * @param documents
+	 * @param location_of_index
+	 * @return
+	 */
 	public boolean writeProcessedDocumentInIndex(String documents, String location_of_index) {
 		try (BufferedWriter bfw = new BufferedWriter(new FileWriter(new File(location_of_index + "/indexdocs.txt")))) {
 

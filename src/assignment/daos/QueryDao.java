@@ -8,8 +8,18 @@ import java.util.HashSet;
 import assignment.pojos.Document;
 import assignment.pojos.Term;
 
+/**
+ * @author lovey joshi
+ *
+ */
 public class QueryDao {
 
+	/**
+	 * @param query
+	 * @param indexmap
+	 * @param alldocuments
+	 * @return
+	 */
 	public HashMap<String, Term> retrieveResults(String query, HashMap<String, Term> indexmap,
 			ArrayList<String> alldocuments) {
 		String[] querySplit = query.split(" ");
@@ -35,6 +45,11 @@ public class QueryDao {
 		return indexOfQueryTerms;
 	}
 
+	/**
+	 * @param query
+	 * @param operation
+	 * @return
+	 */
 	private String[] processQuery(String query, String operation) {
 		String[] querySplit = query.split(" ");
 		String[] queryProcessed = new String[querySplit.length];
@@ -82,6 +97,13 @@ public class QueryDao {
 		return queryProcessed;
 	}
 
+	/**
+	 * @param indexOfQueryTerms
+	 * @param queryProcessed
+	 * @param operation
+	 * @param alldocuments
+	 * @return
+	 */
 	private HashMap<String, Term> processQueryResults(HashMap<String, Term> indexOfQueryTerms, String[] queryProcessed,
 			String operation, ArrayList<String> alldocuments) {
 		switch (operation) {

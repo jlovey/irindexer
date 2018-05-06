@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 import java.util.HashSet;
 
+/**
+ * @author lovey joshi
+ *
+ */
 public class Term implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -15,6 +19,9 @@ public class Term implements Serializable {
 		return termFrequency;
 	}
 
+	/**
+	 * @param termFrequency
+	 */
 	public void setTermFrequency(long termFrequency) {
 		this.termFrequency = termFrequency;
 	}
@@ -23,6 +30,9 @@ public class Term implements Serializable {
 		return documents;
 	}
 
+	/**
+	 * @param documents
+	 */
 	public void setDocuments(HashSet<Document> documents) {
 		this.documents = documents;
 	}

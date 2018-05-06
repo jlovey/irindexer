@@ -11,6 +11,10 @@ import assignment.daos.IndexingDao;
 import assignment.daos.ProcessingDao;
 import assignment.pojos.Term;
 
+/**
+ * @author lovey joshi
+ *
+ */
 public class IndexTesting {
 
 	private static Logger log = Logger.getLogger("IndexTesting");

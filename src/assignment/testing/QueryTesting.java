@@ -12,6 +12,10 @@ import assignment.daos.QueryDao;
 import assignment.pojos.Document;
 import assignment.pojos.Term;
 
+/**
+ * @author lovey joshi
+ *
+ */
 public class QueryTesting {
 	private static Logger log = Logger.getLogger("QueryTesting");
 
